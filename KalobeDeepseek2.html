@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalobe Microfinance Empowerment Platform</title>
+    <style>
+        /* General Styles */
+        :root {
+            --primary-color: #1e90ff; /* Dodger Blue */
+            --secondary-color: #ff7f50; /* Coral */
+            --accent-color: #ffa07a; /* Light Salmon */
+            --light-color: #f5f5f5; /* Light Gray */
+            --dark-color: #2c3e50; /* Dark Blue */
+            --white-color: #ffffff; /* White */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--white-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            color: var(--primary-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(90deg, #ff7f50, #2c3e50);
+            color: var(--white-color); /* Ensure text is white */
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header img {
+            height: 60px;
+            margin-bottom: 10px;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            font-weight: 600;
+        }
+
+        /* Sticky Navigation */
+        nav {
+            background-color: var(--dark-color);
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: var(--white-color);
+            font-weight: 500;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: var(--primary-color);
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            margin-bottom: 60px;
+            padding: 40px;
+            background-color: var(--white-color);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(90deg, #a41c1c, #10a754); /* Darker to lighter blue */
+            color: var(--white-color);
+            border-radius: 10px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+        }
+
+        /* Services Section */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--light-color);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        /* Success Stories Section */
+        .success-stories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .story-card {
+            background-color: var(--light-color);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .story-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        /* Contact Section */
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid var(--light-color);
+            border-radius: 5px;
+        }
+
+        .contact-form button {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .contact-form button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* Email Link Hover Effect */
+        a[href^="mailto:"] {
+            color: var(--primary-color);
+            transition: color 0.3s;
+        }
+
+        a[href^="mailto:"]:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: var(--white-color);
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 60px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .services, .success-stories {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <img src="KalobeImages/Kalobe7.jpg" alt="Kalobe Microfinance Logo">
+        <h1>Kalobe Microfinance Empowerment Platform</h1>
+    </header>
+
+    <!-- Sticky Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Our Services</a></li>
+            <li><a href="#stories">Success Stories</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <h1>Empowering Communities Through Financial Inclusion</h1>
+            <p>Providing accessible financial services to underserved communities</p>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about">
+            <h2>About Us</h2>
+            <p>Kalobe Microfinance Empowerment Platform Limited is a financial institution dedicated to providing accessible financial services to underserved communities, particularly targeting low-income individuals and aspiring entrepreneurs. Our mission is to empower these individuals through microloans, financial education, and business development support, enabling them to achieve economic independence and improve their quality of life.</p>
+            <h3>Vision</h3>
+            <p>To be a leading provider of microfinance solutions that foster sustainable economic growth and empowerment within marginalized communities in line with Sustainable Development Goals.</p>
+            <h3>Mission</h3>
+            <ul>
+                <li>Providing affordable microloans tailored to the needs of small-scale entrepreneurs.</li>
+                <li>Offering comprehensive financial literacy programs that equip clients with essential money management skills.</li>
+                <li>Supporting business development initiatives that help clients launch and grow their enterprises.</li>
+            </ul>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services">
+            <h2>Our Services</h2>
+            <div class="services">
+                <div class="service-card">
+                    <h3>Microloans</h3>
+                    <p>Small loans with flexible repayment terms aimed at helping individuals start or expand their businesses.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Financial Education</h3>
+                    <p>Workshops and training sessions focused on budgeting, saving, investing, and responsible borrowing.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Business Development Support</h3>
+                    <p>Resources and mentorship programs that assist clients in developing viable business plans and strategies for success.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Success Stories Section -->
+        <section id="stories">
+            <h2>Success Stories</h2>
+            <div class="success-stories">
+                <div class="story-card">
+                    <img src="KalobeImages/African_man.jpg" alt="Client 1">
+                    <h3>Ali Hassan</h3>
+                    <p>"Thanks to Kalobe, I was able to start my own business and provide for my family."</p>
+                </div>
+                <div class="story-card">
+                    <img src="KalobeImages/African_woman.jpg" alt="Client 2">
+                    <h3>Ann Njeri</h3>
+                    <p>"The financial education program helped me manage my finances better and save for the future."</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Have questions or need assistance? Reach out to us:</p>
+            <p><strong>Email:</strong> <a href="mailto:kalobemfplatform@gmail.com">kalobemfplatform@gmail.com</a></p>
+            <form class="contact-form">
+                <input type="text" id="name" placeholder="Your Name" required>
+                <input type="email" id="email" placeholder="Your Email" required>
+                <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+            <p id="success-message" style="display: none; color: var(--primary-color);">Thank you for your message! We will get back to you soon.</p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Kalobe Microfinance Empowerment Platform Limited. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                window.scrollTo({
+                    top: targetSection.offsetTop - 100,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Contact form validation
+        const contactForm = document.querySelector('.contact-form');
+        const successMessage = document.getElementById('success-message');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            if (!name || !email || !message) {
+                alert('Please fill out all fields.');
+                return;
+            }
+
+            // Simulate form submission
+            console.log('Form submitted:', { name, email, message });
+            contactForm.reset();
+            successMessage.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
